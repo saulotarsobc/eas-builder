@@ -1,0 +1,58 @@
+Creating new worker instance
+Intel, 4 vCPUs, 16 GB RAM
+
+Using image "ubuntu-22.04-jdk-17-ndk-26.1.10909125" based on "ubuntu-2204-jammy-v20240614"
+
+Installed software:
+- NDK 26.1.10909125
+- Node.js 18.18.0
+- Bun 1.1.13
+- Yarn 1.22.21
+- pnpm 9.3.0
+- npm 9.8.1
+- Java 17
+- node-gyp 10.1.0
+Resolved builder image to 'sdk-51'.
+
+Project environment variables:
+  EXPO_PUBLIC_API_URL=https://api-sample.com.br
+
+EAS Build environment variables:
+  SHELL=/bin/sh
+  NVM_INC=/home/expo/.nvm/versions/node/v18.18.0/include/node
+  JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+  PWD=/usr/local/eas-build-worker
+  LOGNAME=expo
+  SYSTEMD_EXEC_PID=756
+  HOME=/home/expo
+  LANG=en_US.UTF-8
+  INVOCATION_ID=999999999999999999999999
+  ANDROID_NDK_HOME=/home/expo/Android/Sdk/ndk/26.1.10909125
+  NVM_DIR=/home/expo/.nvm
+  ANDROID_HOME=/home/expo/Android/Sdk
+  USER=expo
+  SHLVL=0
+  ANDROID_SDK_ROOT=/home/expo/Android/Sdk
+  JOURNAL_STREAM=8:17333
+  PATH=/home/expo/workingdir/bin:/home/expo/.nvm/versions/node/v18.18.0/bin:/opt/bundletool:/home/expo/Android/Sdk/build-tools/29.0.3:/home/expo/Android/Sdk/ndk/26.1.10909125:/home/expo/Android/Sdk/cmdline-tools/tools/bin:/home/expo/Android/Sdk/tools:/home/expo/Android/Sdk/tools/bin:/home/expo/Android/Sdk/platform-tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/expo/.bun/bin
+  NVM_BIN=/home/expo/.nvm/versions/node/v18.18.0/bin
+  EAS_BUILD_WORKER_DIR=/home/expo/eas-build-worker
+  _=/home/expo/.nvm/versions/node/v18.18.0/bin/node
+  CI=1
+  MAESTRO_DRIVER_STARTUP_TIMEOUT=120000
+  EAS_BUILD=true
+  EAS_BUILD_RUNNER=eas-build
+  EAS_BUILD_PLATFORM=android
+  NPM_CACHE_URL=http://10.4.0.19:4873
+  NVM_NODEJS_ORG_MIRROR=http://10.4.0.203:8081
+  EAS_BUILD_NPM_CACHE_URL=http://10.4.0.19:4873
+  EAS_BUILD_PROFILE=production
+  EAS_BUILD_GIT_COMMIT_HASH=999999999999999999999999
+  EAS_BUILD_ID=999999999999999999999999-1298-49e6-bcec-999999999999999999999999
+  EAS_BUILD_WORKINGDIR=/home/expo/workingdir/build
+  EAS_BUILD_PROJECT_ID=81b176c3-9c32-4b86-a100-52b498b0cfd3
+  GRADLE_OPTS=-Dorg.gradle.jvmargs="-Xmx14g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" -Dorg.gradle.parallel=true -Dorg.gradle.daemon=false
+  EAS_BUILD_USERNAME=saulotarsobc
+  __EAS_BUILD_ENVS_DIR=/home/expo/workingdir/env
+
+Builder is ready, starting build

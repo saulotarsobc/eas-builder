@@ -1,0 +1,59 @@
+Creating new worker instance
+M1, 2 cores, 8 GB RAM
+
+Using VM template "macos-sonoma-14.5-xcode-15.4" running macOS Sonoma 14.5
+
+Installed software:
+- Xcode 15.4 (15F31d)
+- Node.js 18.18.0
+- Bun 1.1.13
+- Yarn 1.22.21
+- pnpm 9.3.0
+- npm 9.8.1
+- fastlane 2.220.0
+- CocoaPods 1.14.3
+- Ruby 2.7
+- node-gyp 10.1.0
+Resolved builder image to 'sdk-50'.
+
+EAS Build environment variables:
+  GEM_PATH=/Users/expo/.gems/arm64
+  PATH=/Users/expo/workingdir/bin:/Users/expo/.nvm/versions/node/v18.18.0/bin:/Users/expo/.gems/arm64/bin:/opt/homebrew/opt/ruby@2/bin:/opt/homebrew/opt/ruby/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/expo/.bun/bin
+  FASTLANE_XCODE_LIST_TIMEOUT=30
+  GEM_HOME=/Users/expo/.gems/arm64
+  HOME=/Users/expo
+  XPC_SERVICE_NAME=host.exp.worker
+  XPC_FLAGS=0x0
+  LOGNAME=expo
+  USER=expo
+  SHELL=/bin/zsh
+  TMPDIR=/var/folders/vn/nzbsghpn733f46w61_gbp33r0000gn/T/
+  SHLVL=0
+  PWD=/usr/local/eas-build-worker
+  OLDPWD=/usr/local/eas-build-worker
+  NVM_CD_FLAGS=-q
+  NVM_DIR=/Users/expo/.nvm
+  NVM_BIN=/Users/expo/.nvm/versions/node/v18.18.0/bin
+  NVM_INC=/Users/expo/.nvm/versions/node/v18.18.0/include/node
+  _=/Users/expo/.nvm/versions/node/v18.18.0/bin/node
+  __CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+  CI=1
+  MAESTRO_DRIVER_STARTUP_TIMEOUT=120000
+  EAS_BUILD=true
+  EAS_BUILD_RUNNER=eas-build
+  EAS_BUILD_PLATFORM=ios
+  NPM_CACHE_URL=http://10.94.183.70:4873
+  NVM_NODEJS_ORG_MIRROR=http://10.94.183.70:8081
+  EAS_BUILD_NPM_CACHE_URL=http://10.94.183.70:4873
+  EAS_BUILD_PROFILE=production
+  EAS_BUILD_GIT_COMMIT_HASH=999999999999999999999999
+  EAS_BUILD_ID=999999999999999999999999-88ea-4007-acda-999999999999999999999999
+  LANG=en_US.UTF-8
+  EAS_BUILD_WORKINGDIR=/Users/expo/workingdir/build
+  EAS_BUILD_PROJECT_ID=999999999999999999999999-531e-4405-a6de-999999999999999999999999
+  EAS_BUILD_COCOAPODS_CACHE_URL=http://10.94.183.70:9001
+  GRADLE_OPTS=-Dorg.gradle.jvmargs="-Xmx14g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" -Dorg.gradle.parallel=true -Dorg.gradle.daemon=false
+  EAS_BUILD_USERNAME=fulanodetal
+  __EAS_BUILD_ENVS_DIR=/Users/expo/workingdir/env
+
+Builder is ready, starting build
