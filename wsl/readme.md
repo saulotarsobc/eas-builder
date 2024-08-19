@@ -209,4 +209,4 @@ eas build -p android -e apk --local;
 ## Extras
 
 - [sdkmanager](./sdkmanager.md)
-- [expo --check](./expo-check.md)
+- [expo --check](../expo-check.md)
