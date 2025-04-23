@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "build:script": "tsup",
-    "prebuildbuild:50": "npm run build:script",
-    "prebuildbuild:51": "npm run build:script",
-    "prebuildbuild:52": "npm run build:script",
+    "prebuild:50": "npm run build:script",
+    "prebuild:51": "npm run build:script",
+    "prebuild:52": "npm run build:script",
     "build:50": "docker build --pull --rm -f Dockerfile.expo-50 -t saulotarsobc/eas-builder-sc:expo-50 .",
     "build:51": "docker build --pull --rm -f Dockerfile.expo-51 -t saulotarsobc/eas-builder-sc:expo-51 .",
     "build:52": "docker build --pull --rm -f Dockerfile.expo-52 -t saulotarsobc/eas-builder-sc:expo-52 .",
