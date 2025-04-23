@@ -5,8 +5,12 @@
   "main": "main.js",
   "scripts": {
     "build:script": "tsup",
-    "build:docker-image": "docker build --pull --rm -f Dockerfile -t eas-builder-sc:latest .",
-    "build": "npm run build:script && npm run build:docker-image"
+    "prebuildbuild:50": "npm run build:script",
+    "prebuildbuild:51": "npm run build:script",
+    "prebuildbuild:52": "npm run build:script",
+    "build:50": "docker build --pull --rm -f Dockerfile.expo-50 -t eas-builder-sc:50 .",
+    "build:51": "docker build --pull --rm -f Dockerfile.expo-51 -t eas-builder-sc:51 .",
+    "build:52": "docker build --pull --rm -f Dockerfile.expo-52 -t eas-builder-sc:52 ."
   },
   "keywords": [],
   "author": "",
