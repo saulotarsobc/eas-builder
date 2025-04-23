@@ -1,0 +1,22 @@
+{
+  "name": "eas-builer-sc",
+  "version": "1.0.0",
+  "description": "eas-builer-sc",
+  "main": "main.js",
+  "scripts": {
+    "build:script": "tsup",
+    "build:docker-image": "docker build --pull --rm -f Dockerfile -t eas-builder-sc:latest .",
+    "build": "npm run build:script && npm run build:docker-image"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/node": "^22.14.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}

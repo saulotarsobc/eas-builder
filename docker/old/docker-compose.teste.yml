@@ -1,4 +1,0 @@
-services:
-  eas-builder:
-    container_name: eas-builder
-    image:

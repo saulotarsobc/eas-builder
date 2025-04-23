@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    entrypoint: bash -c "node /usr/local/bin/main.js && tail -f /dev/null"
+    # entrypoint: bash -c "node /usr/local/bin/main.js"
+    # entrypoint: "tail -f /dev/null"
+    volumes:
+      - ./build:/build
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "8"
+          memory: "16G"
