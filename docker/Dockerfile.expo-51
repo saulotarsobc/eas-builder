@@ -1,4 +1,4 @@
-FROM node:18.18.0
+FROM node:18.18.0-slim as builder
 
 # Atualizando e instalando pacotes necessários
 RUN apt update && apt upgrade -y && apt install curl unzip zip curl gh -y;

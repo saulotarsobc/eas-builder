@@ -1,62 +1,93 @@
 import { spawn } from "child_process";
+import fs from "fs";
+import path from "path";
 
 interface RunCommand {
-    label: string;
-    command: string;
-    args?: string[];
+  label: string;
+  command: string;
+  args?: string[];
+}
+
+const LOG_FILE = "/build/build.log";
+
+function writeLog(message: string) {
+  const timestamp = new Date().toISOString();
+  const logLine = `[${timestamp}] ${message}\n`;
+  fs.appendFileSync(LOG_FILE, logLine, { encoding: "utf-8" });
 }
 
 function run({ label, command, args = [] }: RunCommand) {
-    console.log(`\n=== ${label} ===`);
+  console.log(`\n=== ${label} ===`);
+  writeLog(`\n=== ${label} ===`);
+  writeLog(`Comando: ${command} ${args.join(" ")}`);
 
-    const proc = spawn(command, args, { stdio: "inherit", shell: true });
+  const proc = spawn(command, args, { shell: true });
 
-    proc.on("error", (err) => {
-        console.error(`Erro ao executar "${command}":`, err.message);
-    });
+  proc.stdout?.on("data", (data) => {
+    const output = data.toString().trim();
+    console.log(output);
+    writeLog(output);
+  });
 
-    proc.on("exit", (code) => {
-        if (code !== 0) {
-            console.error(`Processo "${command}" terminou com código ${code}`);
-        }
-    });
+  proc.stderr?.on("data", (data) => {
+    const output = data.toString().trim();
+    console.error(output);
+    writeLog(output);
+  });
+
+  proc.on("error", (err) => {
+    const errorMsg = `Erro ao executar "${command}": ${err.message}`;
+    console.error(errorMsg);
+    writeLog(errorMsg);
+  });
+
+  proc.on("exit", (code) => {
+    const statusMsg =
+      code === 0
+        ? `✅ Comando "${command}" executado com sucesso.`
+        : `❌ Processo "${command}" terminou com código ${code}`;
+    writeLog(statusMsg);
+  });
 }
 
 console.log("=== Ambiente de Build Android ===");
+writeLog("=== Iniciando ambiente de build Android ===");
 
 run({
-    label: "Android SDK Version",
-    command: "sdkmanager --version"
+  label: "Android SDK Version",
+  command: "sdkmanager --version",
 });
 
 run({
-    label: "Android NDK Version",
-    command: `${process.env.ANDROID_NDK_HOME}/ndk-build --version`
+  label: "Android NDK Version",
+  command: `${process.env.ANDROID_NDK_HOME}/ndk-build`,
+  args: ["--version"],
 });
 
 run({
-    label: "EAS CLI Version",
-    command: "eas --version"
+  label: "EAS CLI Version",
+  command: "eas --version",
 });
 
 if (process.env.EXPO_TOKEN) {
-    run({
-        label: "Autenticando usuário",
-        command: "eas",
-        args: ["login", "-t", process.env.EXPO_TOKEN]
-    });
+  run({
+    label: "Autenticando usuário",
+    command: "eas whoami",
+  });
 } else {
-    console.warn("\n⚠️  Variável de ambiente EXPO_TOKEN não definida. Usuário não autenticado.");
+  const warning = "⚠️  EXPO_TOKEN não definida. Usuário não autenticado.";
+  console.warn(`\n${warning}`);
+  writeLog(warning);
 }
 
 run({
-    label: "npm install",
-    command: "npm",
-    args: ["install"]
+  label: "npm install",
+  command: "npm",
+  args: ["install"],
 });
 
 run({
-    label: "Build Android",
-    command: "eas",
-    args: ["build", "-p", "android", "--profile", "production", "--local", "--non-interactive"]
+  label: "Build Android",
+  command: "eas",
+  args: ["build", "-p", "android", "--profile", "production", "--local"],
 });
