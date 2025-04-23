@@ -1,0 +1,24 @@
+services:
+  teste-expo-50:
+    build: 
+      context: .
+      dockerfile: Dockerfile.expo-50
+    env_file:
+      - .eas.env
+    entrypoint: tail -f /dev/null
+
+  teste-expo-51:
+    build: 
+      context: .
+      dockerfile: Dockerfile.expo-51
+    env_file:
+      - .eas.env
+    entrypoint: tail -f /dev/null
+
+  teste-expo-52:
+    build: 
+      context: .
+      dockerfile: Dockerfile.expo-52
+    env_file:
+      - .eas.env
+    entrypoint: tail -f /dev/null

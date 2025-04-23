@@ -2,3 +2,4 @@
 /dist
 /.env
 /tools
+/.eas.env
