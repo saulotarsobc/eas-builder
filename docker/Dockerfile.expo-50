@@ -29,7 +29,7 @@ RUN mkdir -p /opt/java && \
     rm /tmp/openjdk.tar.gz;
 
 # Instalando Android Command-line Tools
-# https://builds.openlogic.com/downloadJDK/openlogic-openjdk/17.0.14+7/openlogic-openjdk-17.0.14+7-linux-x64.tar.gz
+# https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip?hl=pt-br
 COPY ./tools/commandlinetools-linux-11076708_latest.zip /tmp/cmd-tools.zip
 COPY ./tools/commandlinetools-linux-11076708_latest.zip /tmp/cmd-tools.zip
 RUN mkdir -p $ANDROID_HOME/cmdline-tools && \
