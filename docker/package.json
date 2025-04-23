@@ -8,9 +8,12 @@
     "prebuildbuild:50": "npm run build:script",
     "prebuildbuild:51": "npm run build:script",
     "prebuildbuild:52": "npm run build:script",
-    "build:50": "docker build --pull --rm -f Dockerfile.expo-50 -t eas-builder-sc:50 .",
-    "build:51": "docker build --pull --rm -f Dockerfile.expo-51 -t eas-builder-sc:51 .",
-    "build:52": "docker build --pull --rm -f Dockerfile.expo-52 -t eas-builder-sc:52 ."
+    "build:50": "docker build --pull --rm -f Dockerfile.expo-50 -t eas-builder-sc:expo-50 .",
+    "build:51": "docker build --pull --rm -f Dockerfile.expo-51 -t eas-builder-sc:expo-51 .",
+    "build:52": "docker build --pull --rm -f Dockerfile.expo-52 -t eas-builder-sc:expo-52 .",
+    "postbuild:50": "docker tag eas-builder-sc:expo-50 saulotarsobc/eas-builder-sc:expo-50 && docker push saulotarsobc/eas-builder-sc:expo-50",
+    "postbuild:51": "docker tag eas-builder-sc:expo-51 saulotarsobc/eas-builder-sc:expo-51 && docker push saulotarsobc/eas-builder-sc:expo-51",
+    "postbuild:52": "docker tag eas-builder-sc:expo-52 saulotarsobc/eas-builder-sc:expo-52 && docker push saulotarsobc/eas-builder-sc:expo-52"
   },
   "keywords": [],
   "author": "",
