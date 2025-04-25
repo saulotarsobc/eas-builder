@@ -1,6 +1,6 @@
-- [✅] [WSL](./wsl/)
-- [🏗️] [Docker](./docker/)
-- [🏗️] [MAC os](./mac/)
+- [x] [WSL](./wsl/)
+- [x] [Docker](./docker/)
+- [ ] [MAC os](./mac/)
 
 ---
 
