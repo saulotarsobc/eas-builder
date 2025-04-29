@@ -1,27 +1,30 @@
 services:
-  teste-expo-50:
+  test-expo-50:
     build: 
       context: .
       dockerfile: Dockerfile.expo-50
     env_file:
       - .eas.env
-    # entrypoint: tail -f /dev/null
     entrypoint: bash -c "node /usr/local/bin/main.js && tail -f /dev/null"
     volumes:
       - ./build:/build
 
-  teste-expo-51:
+  test-expo-51:
     build: 
       context: .
       dockerfile: Dockerfile.expo-51
     env_file:
       - .eas.env
-    entrypoint: tail -f /dev/null
+    entrypoint: bash -c "node /usr/local/bin/main.js && tail -f /dev/null"
+    volumes:
+      - ./build:/build
 
-  teste-expo-52:
+  test-expo-52:
     build: 
       context: .
       dockerfile: Dockerfile.expo-52
     env_file:
       - .eas.env
-    entrypoint: tail -f /dev/null
+    entrypoint: bash -c "node /usr/local/bin/main.js && tail -f /dev/null"
+    volumes:
+      - ./build:/build
