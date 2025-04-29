@@ -1,4 +1,4 @@
-FROM node:18.18.0-slim as builder
+FROM node:18.18.0-slim AS builder
 
 # Atualizando e instalando pacotes necessários
 RUN apt update && \
@@ -11,8 +11,8 @@ RUN apt update && \
 ENV JAVA_HOME="/opt/java/openlogic-openjdk-17.0.14+7-linux-x64"
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
-ENV ANDROID_HOME="$HOME/android"
-ENV ANDROID_SDK_ROOT="$ANDROID_HOME"
+ENV ANDROID_HOME="/root/android"
+ENV ANDROID_SDK_ROOT="/root/android"
 ENV ANDROID_NDK_HOME="$ANDROID_HOME/ndk/android-ndk-r26d"
 ENV PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH"
 

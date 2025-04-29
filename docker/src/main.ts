@@ -99,6 +99,11 @@ async function main() {
     });
 
     await run({
+      label: "Bun Version",
+      command: "bun --version",
+    });
+
+    await run({
       label: "npm install",
       command: "npm install",
       args: ["install"],

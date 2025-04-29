@@ -1,5 +1,5 @@
 services:
-  test-expo-50:
+  eas-builder-sc-expo-50:
     build: 
       context: .
       dockerfile: Dockerfile.expo-50
@@ -9,7 +9,7 @@ services:
     volumes:
       - ./build:/build
 
-  test-expo-51:
+  eas-builder-sc-expo-51:
     build: 
       context: .
       dockerfile: Dockerfile.expo-51
@@ -19,7 +19,7 @@ services:
     volumes:
       - ./build:/build
 
-  test-expo-52:
+  eas-builder-sc-expo-52:
     build: 
       context: .
       dockerfile: Dockerfile.expo-52
