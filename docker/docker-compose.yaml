@@ -5,7 +5,10 @@ services:
       dockerfile: Dockerfile.expo-50
     env_file:
       - .eas.env
-    entrypoint: tail -f /dev/null
+    # entrypoint: tail -f /dev/null
+    entrypoint: bash -c "node /usr/local/bin/main.js && tail -f /dev/null"
+    volumes:
+      - ./build:/build
 
   teste-expo-51:
     build: 

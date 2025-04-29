@@ -1,6 +1,6 @@
 import { spawn } from "child_process";
 import fs from "fs";
-import path from "path";
+import { exit } from "process";
 
 interface RunCommand {
   label: string;
@@ -17,9 +17,8 @@ function writeLog(message: string) {
 }
 
 function run({ label, command, args = [] }: RunCommand) {
-  console.log(`\n=== ${label} ===`);
-  writeLog(`\n=== ${label} ===`);
-  writeLog(`Comando: ${command} ${args.join(" ")}`);
+  console.log(`\n[${label.toUpperCase()}]`);
+  writeLog(`\n[${label}]`);
 
   const proc = spawn(command, args, { shell: true });
 
@@ -50,9 +49,6 @@ function run({ label, command, args = [] }: RunCommand) {
   });
 }
 
-console.log("=== Ambiente de Build Android ===");
-writeLog("=== Iniciando ambiente de build Android ===");
-
 run({
   label: "Android SDK Version",
   command: "sdkmanager --version",
@@ -60,14 +56,15 @@ run({
 
 run({
   label: "Android NDK Version",
-  command: `${process.env.ANDROID_NDK_HOME}/ndk-build`,
-  args: ["--version"],
+  command: `${process.env.ANDROID_NDK_HOME}/ndk-build --version`,
 });
 
 run({
   label: "EAS CLI Version",
   command: "eas --version",
 });
+
+exit();
 
 if (process.env.EXPO_TOKEN) {
   run({
