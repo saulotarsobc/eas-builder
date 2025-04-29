@@ -11,7 +11,7 @@ function writeLog(message: string) {
 
 function run({ label, command, args = [] }: RunCommand): Promise<void> {
   return new Promise((resolve, reject) => {
-    console.log(`\n[${label.toUpperCase()}]`);
+    console.log(`\n\x1b[34m[${label.toUpperCase()}]\x1b[0m`);
     writeLog(`\n[${label}]`);
 
     const proc = spawn(command, args, { shell: true });
@@ -81,6 +81,21 @@ async function main() {
     await run({
       label: "EAS CLI Version",
       command: "eas --version",
+    });
+
+    await run({
+      label: "Node Version",
+      command: "node --version",
+    });
+
+    await run({
+      label: "Yarn Version",
+      command: "yarn --version",
+    });
+
+    await run({
+      label: "NPM Version",
+      command: "npm --version",
     });
 
     await run({
