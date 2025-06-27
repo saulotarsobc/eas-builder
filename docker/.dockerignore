@@ -1,9 +1,0 @@
-docker-compose.yaml
-Dockerfile
-.env
-/node_modules
-/build
-/.vscode
-/.expo
-/ios
-/android

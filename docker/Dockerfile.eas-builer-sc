@@ -1,3 +1,0 @@
-FROM eas-builder-sc:latest AS eas-builer-sc
-COPY . .
-ENTRYPOINT [ "node", "/usr/local/bin/main.js" ]
